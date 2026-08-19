@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My EQ Legends Tracker</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #111827; color: #f9fafb; }
+    .wrap { max-width: 700px; margin: auto; padding: 20px; }
+    h1 { margin-top: 0; }
+    .card { background: #1f2937; border-radius: 14px; padding: 18px; margin: 14px 0; }
+    label { display:block; margin: 10px 0 5px; font-weight: bold; }
+    input, textarea, button {
+      width: 100%; box-sizing: border-box; padding: 12px; border-radius: 8px;
+      border: 1px solid #4b5563; font-size: 16px;
+    }
+    input, textarea { background: #111827; color: white; }
+    button { margin-top: 12px; cursor: pointer; background: #374151; color: white; }
+    button.primary { background: #2563eb; border: none; }
+    .status { margin-top: 12px; color: #86efac; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>My EQ Legends Tracker</h1>
+    <div class="card">
+      <h2>Character</h2>
+      <label for="name">Character Name</label>
+      <input id="name" value="Beladiel">
+
+      <label for="level">Level</label>
+      <input id="level" type="number" value="50" min="1" max="100">
+
+      <label for="classes">Classes</label>
+      <input id="classes" value="Shadow Knight / Druid / Enchanter">
+
+      <button class="primary" onclick="saveCharacter()">Save Character</button>
+      <div id="status" class="status"></div>
+    </div>
+
+    <div class="card">
+      <h2>Current Goals</h2>
+      <textarea id="goals" rows="8" placeholder="Add items, quests, factions, focus effects, clickies, etc."></textarea>
+      <button onclick="saveGoals()">Save Goals</button>
+    </div>
+
+    <div class="card">
+      <h2>Notes</h2>
+      <textarea id="notes" rows="8" placeholder="Keep your EQ notes here..."></textarea>
+      <button onclick="saveNotes()">Save Notes</button>
+    </div>
+  </div>
+
+  <script>
+    function saveCharacter() {
+      localStorage.setItem("eqCharacter", JSON.stringify({
+        name: document.getElementById("name").value,
+        level: document.getElementById("level").value,
+        classes: document.getElementById("classes").value
+      }));
+      document.getElementById("status").textContent = "Character saved.";
+    }
+
+    function saveGoals() {
+      localStorage.setItem("eqGoals", document.getElementById("goals").value);
+      document.getElementById("status").textContent = "Goals saved.";
+    }
+
+    function saveNotes() {
+      localStorage.setItem("eqNotes", document.getElementById("notes").value);
+      document.getElementById("status").textContent = "Notes saved.";
+    }
+
+    window.onload = function() {
+      const character = JSON.parse(localStorage.getItem("eqCharacter") || "null");
+      if (character) {
+        document.getElementById("name").value = character.name || "";
+        document.getElementById("level").value = character.level || "";
+        document.getElementById("classes").value = character.classes || "";
+      }
+      document.getElementById("goals").value = localStorage.getItem("eqGoals") || "";
+      document.getElementById("notes").value = localStorage.getItem("eqNotes") || "";
+    };
+  </script>
+</body>
+</html>
