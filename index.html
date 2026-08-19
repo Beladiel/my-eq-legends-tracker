@@ -40,13 +40,60 @@
 
     <div class="card">
       <h2>Current Goals</h2>
-      <textarea id="goals" rows="8" placeholder="Add items, quests, factions, focus effects, clickies, etc."></textarea>
+      <textarea id="goals" rows="18" placeholder="Add items, quests, factions, focus effects, clickies, etc.">CURRENT PRIORITIES
+• Continue level 50 progression for Beladiel
+• Farm useful focus-effect upgrades for Shadow Knight / Druid / Enchanter
+• Hunt high-value clicky items
+• Finish Tashania quest faction requirements
+• Raise Craftkeepers faction from dubious
+• Continue baking progression
+
+GEAR / FOCUS ITEMS
+✓ Djarn's Amethyst Ring — obtained
+✓ Golden Efreeti Boots — obtained
+✓ Idol of the Underking — obtained
+✓ Moonstone Ring — obtained
+✓ Earth Shaker — equipped
+• Continue hunting useful focus items
+• Prioritize effects that improve spell efficiency, damage, and DoT performance
+• Look for upgrades to weaker earring slots
+
+CLICKY TARGETS
+• Golem Metal Wand
+• Continue ranked clicky-item farming list
+
+QUESTS / FACTION
+• Tashania quest — continue progression
+• Raine Beteria / Gleaming Coin of Tash turn-in
+✓ High Guard of Erudin — Ally
+• High Council of Erudin — Indifferent
+• Craftkeepers — Dubious; raise this faction
+• Continue Warrens kobold kills / molar turn-ins as useful
+• Investigate Vasty Deepwater quest / Craftkeepers alternatives
+
+TRADESKILLS — BAKING
+• Continue raising Baking from starting progression in Oggok
+• Use stored/foraged vegetables, fruit, roots, rabbit meat, and berries
+• Continue learning useful vendor ingredients and combines
+
+COMPLETED MILESTONES
+✓ Reached level 50
+✓ Obtained Djarn's Amethyst Ring
+✓ Obtained Golden Efreeti Boots
+✓ Obtained Idol of the Underking
+✓ Obtained Moonstone Ring</textarea>
       <button onclick="saveGoals()">Save Goals</button>
     </div>
 
     <div class="card">
       <h2>Notes</h2>
-      <textarea id="notes" rows="8" placeholder="Keep your EQ notes here..."></textarea>
+      <textarea id="notes" rows="10" placeholder="Keep your EQ notes here...">BELADIEL
+Level 50
+Shadow Knight / Druid / Enchanter
+
+Use this section for new drops, camp notes, faction updates, and next targets.
+
+When a goal is completed, move it to Completed Milestones or mark it with ✓.</textarea>
       <button onclick="saveNotes()">Save Notes</button>
     </div>
   </div>
@@ -78,8 +125,8 @@
         document.getElementById("level").value = character.level || "";
         document.getElementById("classes").value = character.classes || "";
       }
-      document.getElementById("goals").value = localStorage.getItem("eqGoals") || "";
-      document.getElementById("notes").value = localStorage.getItem("eqNotes") || "";
+      document.getElementById("goals").value = localStorage.getItem("eqGoals") ?? document.getElementById("goals").value;
+      document.getElementById("notes").value = localStorage.getItem("eqNotes") ?? document.getElementById("notes").value;
     };
   </script>
 </body>
