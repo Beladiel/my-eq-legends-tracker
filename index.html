@@ -12,7 +12,7 @@
   <title>Beladiel's EQ Legends Tracker</title>
   <style>
     :root{color-scheme:dark;--bg:#090d14;--bg-blue:#0d1522;--surface:#111a27;--border:#4e452e;--border-soft:rgba(198,163,88,.22);--gold:#d8b96e;--gold-bright:#f0d58c;--parchment:#e9dfc3;--text:#f1ead9;--muted:#a9b0b6;--success:#83b58c;--warn:#e0a96d;--shadow:0 14px 36px rgba(0,0,0,.32);--radius:16px}
-    *{box-sizing:border-box} html{background:var(--bg)}
+    *{box-sizing:border-box}html{background:var(--bg)}
     body{margin:0;min-height:100vh;min-height:100dvh;background:radial-gradient(circle at 50% -10%,rgba(47,74,106,.32),transparent 38rem),linear-gradient(160deg,var(--bg-blue) 0%,var(--bg) 56%,#070a10 100%);color:var(--text);font-family:ui-serif,Georgia,Cambria,"Times New Roman",serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
     button,input,textarea{font:inherit}.shell{width:min(100%,1040px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(36px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
     .hero{position:relative;overflow:hidden;padding:24px 20px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(27,41,57,.96),rgba(13,20,31,.98));box-shadow:var(--shadow),inset 0 1px rgba(255,241,194,.08)}
@@ -45,7 +45,7 @@
     <div class="character-meta" aria-label="Character details">
       <span class="level-badge">Level 50</span>
       <span class="class-line">Shadow Knight / Druid / Enchanter</span>
-      <span class="class-line">Focus plan corrected Sep. 5, 2026</span>
+      <span class="class-line">Focus plan updated Sep. 6, 2026</span>
     </div>
   </header>
 
@@ -57,26 +57,26 @@
     <div class="quest-grid">
 
       <article class="quest-card quest-card--featured quest-card--dragon" data-quest="white-dragonscale-cloak">
-        <div class="quest-topline"><div><h3 class="quest-title">White Dragonscale Cloak</h3><p class="quest-description">Turn your White Dragon Hide into Improved Damage III for the BACK slot. You already own the hide.</p></div><span class="status-badge" aria-live="polite">1 / 9</span></div>
-        <div class="progress-track" role="progressbar" aria-label="White Dragonscale Cloak quest progress" aria-valuemin="0" aria-valuemax="9" aria-valuenow="1"><div class="progress-fill"></div></div>
+        <div class="quest-topline"><div><h3 class="quest-title">White Dragonscale Cloak</h3><p class="quest-description">Completed. White Dragonscale Cloak acquired for Improved Damage III on the BACK slot.</p></div><span class="status-badge" aria-live="polite">Complete</span></div>
+        <div class="progress-track" role="progressbar" aria-label="White Dragonscale Cloak quest progress" aria-valuemin="0" aria-valuemax="9" aria-valuenow="9"><div class="progress-fill"></div></div>
         <div class="quest-tools"><a class="guide-link" href="https://eqlwiki.com/White_Dragonscale_Cloak_Quest" target="_blank" rel="noopener noreferrer">EQL Wiki quest guide ↗</a></div>
-        <p class="quest-warning owned-note"><strong>Already done:</strong> White Dragon Hide acquired. Protect it until the final three-item turn-in.</p>
+        <p class="quest-warning owned-note"><strong>Completed:</strong> White Dragonscale Cloak acquired and Improved Damage III secured.</p>
         <ol class="steps">
-          <li class="step"><input class="step-check" id="wdc-hide" type="checkbox" data-requirement="wdc-hide" checked><div class="step-copy"><label class="step-title" for="wdc-hide">Secure the White Dragon Hide</label><p class="step-detail">You already looted this from Lady Vox. Keep it banked or otherwise safe.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-ring" type="checkbox" data-requirement="wdc-ring"><div class="step-copy"><label class="step-title" for="wdc-ring">Get the magical Platinum Diamond Wedding Ring</label><p class="step-detail">Jewelcrafting: Diamond + Enchanted Platinum Bar in a Jeweler's Kit; trivial 287. Buying one from a crafter is fine. Make sure it is the stat-bearing magical version.</p><a class="step-link" href="https://eqlwiki.com/White_Dragonscale_Cloak_Quest" target="_blank" rel="noopener noreferrer">Required jewelry ↗</a></div></li>
-          <li class="step"><input class="step-check" id="wdc-necklace" type="checkbox" data-requirement="wdc-necklace"><div class="step-copy"><label class="step-title" for="wdc-necklace">Get the magical Black Sapphire Platinum Necklace</label><p class="step-detail">Jewelcrafting: Black Sapphire + Enchanted Platinum Bar in a Jeweler's Kit; trivial 284. Buying one from a crafter is fine.</p><a class="step-link" href="https://eqlwiki.com/White_Dragonscale_Cloak_Quest" target="_blank" rel="noopener noreferrer">Required jewelry ↗</a></div></li>
-          <li class="step"><input class="step-check" id="wdc-verify-jewelry" type="checkbox" data-requirement="wdc-verify-jewelry"><div class="step-copy"><label class="step-title" for="wdc-verify-jewelry">Verify both jewelry pieces are the magical versions</label><p class="step-detail">Do not use the plain non-magical combines. The quest specifically requires the magical/stat versions made with enchanted platinum.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-faction" type="checkbox" data-requirement="wdc-faction"><div class="step-copy"><label class="step-title" for="wdc-faction">Confirm Karam Dragonforge is Indifferent or better</label><p class="step-detail">The turn-in requires Indifferent or better faction. Check before placing any items in the trade window.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-travel" type="checkbox" data-requirement="wdc-travel"><div class="step-copy"><label class="step-title" for="wdc-travel">Travel to Karam Dragonforge in Rathe Mountains</label><p class="step-detail">Bring the hide, wedding ring, and necklace together so you can finish in one visit.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-turnin" type="checkbox" data-requirement="wdc-turnin"><div class="step-copy"><label class="step-title" for="wdc-turnin">Turn in all three required items</label><p class="step-detail">Give Karam the White Dragon Hide, magical Platinum Diamond Wedding Ring, and magical Black Sapphire Platinum Necklace together.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-receive" type="checkbox" data-requirement="wdc-receive"><div class="step-copy"><label class="step-title" for="wdc-receive">Receive the White Dragonscale Cloak</label><p class="step-detail">Reward: BACK, ALL classes, AC 10, WIS +9, INT +9, Mana +75, Cold Resist +25.</p></div></li>
-          <li class="step"><input class="step-check" id="wdc-verify-focus" type="checkbox" data-requirement="wdc-verify-focus"><div class="step-copy"><label class="step-title" for="wdc-verify-focus">Equip it and verify Improved Damage III</label><p class="step-detail">Improved Damage III boosts eligible instant direct-damage spells by 20% through level 60. This is one of your best current-era focus upgrades.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-hide" type="checkbox" data-requirement="wdc-hide" checked><div class="step-copy"><label class="step-title" for="wdc-hide">Secure the White Dragon Hide</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-ring" type="checkbox" data-requirement="wdc-ring" checked><div class="step-copy"><label class="step-title" for="wdc-ring">Get the magical Platinum Diamond Wedding Ring</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-necklace" type="checkbox" data-requirement="wdc-necklace" checked><div class="step-copy"><label class="step-title" for="wdc-necklace">Get the magical Black Sapphire Platinum Necklace</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-verify-jewelry" type="checkbox" data-requirement="wdc-verify-jewelry" checked><div class="step-copy"><label class="step-title" for="wdc-verify-jewelry">Verify both jewelry pieces are the magical versions</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-faction" type="checkbox" data-requirement="wdc-faction" checked><div class="step-copy"><label class="step-title" for="wdc-faction">Confirm Karam Dragonforge is Indifferent or better</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-travel" type="checkbox" data-requirement="wdc-travel" checked><div class="step-copy"><label class="step-title" for="wdc-travel">Travel to Karam Dragonforge in Rathe Mountains</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-turnin" type="checkbox" data-requirement="wdc-turnin" checked><div class="step-copy"><label class="step-title" for="wdc-turnin">Turn in all three required items</label><p class="step-detail">Completed.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-receive" type="checkbox" data-requirement="wdc-receive" checked><div class="step-copy"><label class="step-title" for="wdc-receive">Receive the White Dragonscale Cloak</label><p class="step-detail">Reward acquired: BACK, ALL classes, AC 10, WIS +9, INT +9, Mana +75, Cold Resist +25.</p></div></li>
+          <li class="step"><input class="step-check" id="wdc-verify-focus" type="checkbox" data-requirement="wdc-verify-focus" checked><div class="step-copy"><label class="step-title" for="wdc-verify-focus">Equip it and verify Improved Damage III</label><p class="step-detail">Completed. Improved Damage III is now part of the focus setup.</p></div></li>
         </ol>
       </article>
 
       <article class="quest-card quest-card--featured" data-quest="focus-optimization">
-        <div class="quest-topline"><div><h3 class="quest-title">Focus Optimization</h3><p class="quest-description">Final current-era focus plan, built around slot locks and SK / Druid / Enchanter compatibility.</p></div><span class="status-badge" aria-live="polite">5 / 11</span></div>
-        <div class="progress-track" role="progressbar" aria-label="Focus optimization progress" aria-valuemin="0" aria-valuemax="11" aria-valuenow="5"><div class="progress-fill"></div></div>
+        <div class="quest-topline"><div><h3 class="quest-title">Focus Optimization</h3><p class="quest-description">Final current-era focus plan, built around slot locks and SK / Druid / Enchanter compatibility.</p></div><span class="status-badge" aria-live="polite">6 / 11</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Focus optimization progress" aria-valuemin="0" aria-valuemax="11" aria-valuenow="6"><div class="progress-fill"></div></div>
         <p class="quest-warning"><strong>Important rule:</strong> an extracted Focus Exaltation keeps its source slot and class restrictions. A +1 source and +1 compatible destination are required to transfer it. Your Bloodstar Pendant's Affliction Efficiency II is NECK-only; it cannot be moved to another slot.</p>
         <ul class="requirements">
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-range-ii" checked><span><strong>FINGER:</strong> Extended Range II on Engineer's Ring — keep.</span></label></li>
@@ -84,14 +84,28 @@
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-burning-affliction-iii" checked><span><strong>WAIST:</strong> Burning Affliction III on Bone-Clasped Girdle — keep; do not give this slot to Extended Range III.</span></label></li>
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-enhancement-haste-ii" checked><span><strong>FEET:</strong> Enhancement Haste II on Lustrous Russet Boots — keep.</span></label></li>
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-improved-healing-iii" checked><span><strong>RANGE:</strong> Improved Healing III on Bow of the Underfoot — keep.</span></label></li>
-          <li class="requirement"><label><input type="checkbox" data-requirement="focus-improved-damage-iii"><span><strong>BACK:</strong> Finish White Dragonscale Cloak for Improved Damage III.</span></label></li>
+          <li class="requirement"><label><input type="checkbox" data-requirement="focus-improved-damage-iii" checked><span><strong>BACK:</strong> White Dragonscale Cloak → Improved Damage III — completed.</span></label></li>
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-affliction-haste-ii"><span><strong>NECK:</strong> Chrysoberyl Talisman → Affliction Haste II. A minotaur elder, Lower Guk. NECK / ALL classes, so this is the safe end-state haste slot.</span></label></li>
-          <li class="requirement"><label><input type="checkbox" data-requirement="focus-affliction-efficiency-wrist"><span><strong>WRIST:</strong> Chipped Bone Bracelet → Affliction Efficiency II. Chief Goonda / ogre shamans in Western Karana. WRIST / ALL classes, so it can replace the redundant Burning Affliction II on Hotof's Bracer and free your NECK.</span></label></li>
-          <li class="requirement"><label><input type="checkbox" data-requirement="focus-mana-preservation-ii"><span><strong>SECONDARY casting set:</strong> Nisch Mas Ilkvel → Mana Preservation II. A Nisch Mas Mender, Splitpaw. CLR / DRU / SHM, so your Druid qualifies. Swap it in for mana-heavy casting when you are not using Earthshaker.</span></label></li>
+          <li class="requirement"><label><input type="checkbox" data-requirement="focus-affliction-efficiency-wrist"><span><strong>WRIST:</strong> Chipped Bone Bracelet → Affliction Efficiency II. Chief Goonda / ogre shamans in Western Karana. WRIST / ALL classes.</span></label></li>
+          <li class="requirement"><label><input type="checkbox" data-requirement="focus-mana-preservation-ii"><span><strong>HEAD target:</strong> Mane Attraction → Mana Preservation II. ALL-class head item from the toupee portion of the Rain Caller quest. Keep the Mane Attraction once Ping Fuzzlecutter gives it to you. <strong>Alternate Druid casting set:</strong> Nisch Mas Ilkvel in SECONDARY from a Nisch Mas Mender in Splitpaw.</span></label></li>
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-reagent-conservation-iii"><span><strong>WRIST:</strong> Runed Mithril Bracer → Reagent Conservation III. Solusek kobold king, Nagafen's Lair.</span></label></li>
           <li class="requirement"><label><input type="checkbox" data-requirement="focus-extended-enhancement-iii"><span><strong>SECONDARY buff set:</strong> Rokyl's Channelling Crystal → Extended Enhancement III. Magus Rokyl, Nagafen's Lair. Swap it in to buff, then return to Earthshaker.</span></label></li>
         </ul>
-        <p class="quest-warning"><strong>Class-safe layout:</strong> do not use Green Silken Drape for this build unless the actual chest shares NEC/WIZ/MAG/ENC. Your safer route is Chrysoberyl Talisman on NECK for Affliction Haste II and Chipped Bone Bracelet on WRIST for Affliction Efficiency II. Do not try to move the Bloodstar Pendant exaltation itself to wrist.</p>
+      </article>
+
+      <article class="quest-card quest-card--featured" data-quest="mane-attraction">
+        <div class="quest-topline"><div><h3 class="quest-title">Mane Attraction — Mana Preservation II</h3><p class="quest-description">New focus target: obtain the ALL-class HEAD item and keep it for Mana Preservation II.</p></div><span class="status-badge" aria-live="polite">0 / 6</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Mane Attraction quest progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div class="progress-fill"></div></div>
+        <div class="quest-tools"><a class="guide-link" href="https://eqlwiki.com/Rain_Caller_Quest" target="_blank" rel="noopener noreferrer">EQL Wiki quest guide ↗</a></div>
+        <p class="quest-warning"><strong>Goal:</strong> stop when Ping Fuzzlecutter gives you Mane Attraction. Do not hand it back to Sanfyrd if you want to keep the Mana Preservation II head item. The EQL wiki lists the overall Rain Caller quest as Ranger, while Mane Attraction itself is ALL / ALL.</p>
+        <ol class="steps">
+          <li class="step"><input class="step-check" id="mane-crate" type="checkbox" data-requirement="mane-crate"><div class="step-copy"><label class="step-title" for="mane-crate">Get the Crate for Tonics from Sanfyrd Featherhead</label><p class="step-detail">Find Sanfyrd in Ak'Anon and begin the hair-tonic / toupee portion.</p></div></li>
+          <li class="step"><input class="step-check" id="mane-tonics" type="checkbox" data-requirement="mane-tonics"><div class="step-copy"><label class="step-title" for="mane-tonics">Buy 10 Fuzzlecutter Formula 5000 and combine them</label><p class="step-detail">Buy the tonics from Ping Fuzzlecutter in West Freeport and combine all 10 in the crate to make the Crate of Tonic.</p></div></li>
+          <li class="step"><input class="step-check" id="mane-toupee" type="checkbox" data-requirement="mane-toupee"><div class="step-copy"><label class="step-title" for="mane-toupee">Turn in the Crate of Tonic for the Tattered Toupee</label><p class="step-detail">Return to Sanfyrd Featherhead in Ak'Anon and receive the Tattered Toupee.</p></div></li>
+          <li class="step"><input class="step-check" id="mane-gorilla" type="checkbox" data-requirement="mane-gorilla"><div class="step-copy"><label class="step-title" for="mane-gorilla">Farm 2 Clumps of Gorilla Hair</label><p class="step-detail">Farm a hulking gorilla in Cazic Thule until you have two Clumps of Gorilla Hair.</p></div></li>
+          <li class="step"><input class="step-check" id="mane-mermaid" type="checkbox" data-requirement="mane-mermaid"><div class="step-copy"><label class="step-title" for="mane-mermaid">Farm the Lock of Hair</label><p class="step-detail">Kill a golden haired mermaid in Kedge Keep and loot the Lock of Hair.</p></div></li>
+          <li class="step"><input class="step-check" id="mane-turnin" type="checkbox" data-requirement="mane-turnin"><div class="step-copy"><label class="step-title" for="mane-turnin">Turn the four items in to Ping and keep Mane Attraction</label><p class="step-detail">Give Ping the Tattered Toupee, two Clumps of Gorilla Hair, and the Lock of Hair. Receive Mane Attraction: HEAD, ALL / ALL, Mana Preservation II.</p></div></li>
+        </ol>
       </article>
 
       <article class="quest-card quest-card--featured" data-quest="torrid-corruptor">
@@ -151,12 +165,12 @@
         <thead><tr><th>Slot</th><th>Current</th><th>End-state</th><th>Source / restriction</th></tr></thead>
         <tbody>
           <tr><td>Ear 1 / Ear 2</td><td>No focus listed</td><td class="low">Stats / resists</td><td>Known ear focuses are lower-tier duplicates of effects covered elsewhere.</td></tr>
-          <tr><td>Head</td><td>No focus listed</td><td class="low">Stats / resists</td><td>Mane Attraction has Mana Preservation II, but its quest is Ranger-only and the item is NO DROP, so it is not a practical target for this SK / Druid / Enchanter trio.</td></tr>
+          <tr><td>Head</td><td>Open focus target</td><td class="target">Mana Preservation II</td><td><strong>Mane Attraction</strong> — HEAD, ALL / ALL, NO DROP, Mana Preservation II. Obtain it from Ping Fuzzlecutter after the Tattered Toupee + 2 Clumps of Gorilla Hair + Lock of Hair turn-in. Keep it instead of continuing the Rain Caller chain.</td></tr>
           <tr><td>Face</td><td>No focus listed</td><td class="low">Stats / utility</td><td>Polished Mithril Mask has Improved Damage II, but White Dragonscale Cloak's III supersedes it.</td></tr>
           <tr><td>Neck</td><td>Bloodstar Pendant — Affliction Efficiency II</td><td class="target">Affliction Haste II</td><td><strong>Keep AE II here until the wrist replacement is ready.</strong> Then use Chrysoberyl Talisman (NECK, ALL) from a minotaur elder in Lower Guk for Affliction Haste II.</td></tr>
           <tr><td>Shoulders</td><td>No focus listed</td><td class="low">Stats / resists</td><td>No focus needs to be forced here once Affliction Efficiency II moves to wrist.</td></tr>
           <tr><td>Chest</td><td>No compatible Affliction Haste II transfer</td><td class="low">Best compatible stats / AC / HP / mana</td><td>Green Silken Drape is NEC/WIZ/MAG/ENC and cannot be transferred into your current class-incompatible chest. Leave CHEST free of this focus and put Affliction Haste II on NECK instead.</td></tr>
-          <tr><td>Back</td><td>Open focus target</td><td class="target">Improved Damage III</td><td>White Dragonscale Cloak quest, ALL classes. Direct-wear it first; transfer later only if you obtain the duplicate/+1 setup.</td></tr>
+          <tr><td>Back</td><td>White Dragonscale Cloak — Improved Damage III</td><td class="keep">KEEP</td><td>Quest complete Sep. 6, 2026. ALL classes.</td></tr>
           <tr><td>Arms</td><td>Umbral Platemail Vambraces — Enhancement Haste I</td><td class="low">No urgent focus</td><td>EH I is redundant with your FEET II. Umbral is SHD-only, so do not waste motes trying to force caster-only arm focuses into it.</td></tr>
           <tr><td>Wrist 1</td><td>Hotof's Bracer — Burning Affliction II</td><td class="target">Affliction Efficiency II</td><td>Replace the redundant BA II with Chipped Bone Bracelet's Affliction Efficiency II. The source is WRIST / ALL classes, from Chief Goonda / ogre shamans in Western Karana.</td></tr>
           <tr><td>Wrist 2</td><td>No focus listed</td><td class="target">Reagent Conservation III</td><td>Runed Mithril Bracer (WRIST, ALL), Solusek kobold king in Nagafen's Lair.</td></tr>
@@ -167,7 +181,7 @@
           <tr><td>Legs</td><td>No focus listed</td><td class="low">Stats / resists</td><td>Reagent Conservation I sources are inferior to the WRIST III target.</td></tr>
           <tr><td>Feet</td><td>Lustrous Russet Boots — Enhancement Haste II</td><td class="keep">KEEP</td><td>Best qualifying pre-Kunark Enhancement Haste tier currently identified.</td></tr>
           <tr><td>Primary</td><td>Earthshaker combat setup</td><td class="keep">KEEP combat weapon</td><td>No focus change is worth disrupting the 2H combat setup.</td></tr>
-          <tr><td>Secondary</td><td>Unavailable while Earthshaker is equipped</td><td class="target">Two alternate casting focuses</td><td><strong>Extended Enhancement III:</strong> Rokyl's Channelling Crystal, Magus Rokyl in Nagafen's Lair, for long buffs. <strong>Mana Preservation II:</strong> Nisch Mas Ilkvel, a Nisch Mas Mender in Splitpaw, for mana-heavy casting. Swap as needed, then return to Earthshaker.</td></tr>
+          <tr><td>Secondary</td><td>Unavailable while Earthshaker is equipped</td><td class="target">Two alternate casting focuses</td><td><strong>Extended Enhancement III:</strong> Rokyl's Channelling Crystal, Magus Rokyl in Nagafen's Lair, for long buffs. <strong>Mana Preservation II alternative:</strong> Nisch Mas Ilkvel, a Nisch Mas Mender in Splitpaw, for your Druid. Swap as needed, then return to Earthshaker.</td></tr>
           <tr><td>Range</td><td>Bow of the Underfoot — Improved Healing III</td><td class="keep">KEEP</td><td>Excellent level-60 healing focus; no reason to move it.</td></tr>
         </tbody>
       </table></div>
@@ -177,8 +191,8 @@
   <section aria-labelledby="records-heading">
     <div class="section-heading"><div><p class="section-kicker">Hall of records</p><h2 id="records-heading">Owned &amp; Completed</h2></div></div>
     <div class="collection-grid">
-      <article class="collection-card"><ul class="collection-list" aria-label="Owned gear and focus milestones"><li>White Dragon Hide acquired</li><li>Spell Haste II installed on finger from Djarn's Amethyst Ring</li><li>Engineer's Ring — Extended Range II</li><li>Bone-Clasped Girdle — Burning Affliction III</li><li>Lustrous Russet Boots — Enhancement Haste II</li><li>Bow of the Underfoot — Improved Healing III</li><li>Earthshaker equipped</li></ul></article>
-      <article class="collection-card"><ul class="collection-list" aria-label="Completed milestones"><li>Reached level 50</li><li>Completed Tashania quest</li><li>Djarn's Amethyst Ring obtained</li><li>Golden Efreeti Boots obtained</li><li>Idol of the Underking obtained</li><li>Moonstone Ring obtained</li></ul></article>
+      <article class="collection-card"><ul class="collection-list" aria-label="Owned gear and focus milestones"><li>White Dragonscale Cloak — Improved Damage III (quest complete)</li><li>Spell Haste II installed on finger from Djarn's Amethyst Ring</li><li>Engineer's Ring — Extended Range II</li><li>Bone-Clasped Girdle — Burning Affliction III</li><li>Lustrous Russet Boots — Enhancement Haste II</li><li>Bow of the Underfoot — Improved Healing III</li><li>Earthshaker equipped</li></ul></article>
+      <article class="collection-card"><ul class="collection-list" aria-label="Completed milestones"><li>Reached level 50</li><li>Completed Tashania quest</li><li>White Dragonscale Cloak quest completed</li><li>Djarn's Amethyst Ring obtained</li><li>Golden Efreeti Boots obtained</li><li>Idol of the Underking obtained</li><li>Moonstone Ring obtained</li></ul></article>
     </div>
   </section>
 
@@ -190,12 +204,14 @@
       <div class="notes-footer"><p class="save-state" id="save-state" aria-live="polite">Saved on this device</p><button class="clear-button" id="clear-notes" type="button">Clear notes</button></div>
     </div>
   </section>
-  <p class="footer">Progress is stored locally on this device. Focus plan last reviewed Sep. 5, 2026.</p>
+  <p class="footer">Progress is stored locally on this device. Focus plan last reviewed Sep. 6, 2026.</p>
 </main>
 <script>
 (() => {
   const progressKey="eqQuestProgressV1";
   const notesKey="eqNotes";
+  const completionMigrationKey="eqWhiteCloakCompleteSep62026";
+  const whiteCloakKeys=["wdc-hide","wdc-ring","wdc-necklace","wdc-verify-jewelry","wdc-faction","wdc-travel","wdc-turnin","wdc-receive","wdc-verify-focus","focus-improved-damage-iii"];
   const checkboxes=[...document.querySelectorAll("[data-requirement]")];
   const notes=document.getElementById("notes");
   const saveState=document.getElementById("save-state");
@@ -207,7 +223,7 @@
     const progress=card.querySelector("[role='progressbar']");
     const badge=card.querySelector(".status-badge");
     if(badge) badge.textContent=complete===total?"Complete":`${complete} / ${total}`;
-    const fill=card.querySelector(".progress-fill"); if(fill) fill.style.width=`${total?(complete/total)*100:0}%`;
+    const fill=card.querySelector(".progress-fill");if(fill)fill.style.width=`${total?(complete/total)*100:0}%`;
     card.classList.toggle("is-complete",total>0&&complete===total);
     if(progress){progress.setAttribute("aria-valuenow",complete);progress.setAttribute("aria-valuemax",total);progress.setAttribute("aria-valuetext",`${complete} of ${total} complete`)}
   }
@@ -218,6 +234,11 @@
   }
   function saveProgress(){const progress={};checkboxes.forEach(c=>progress[c.dataset.requirement]=c.checked);localStorage.setItem(progressKey,JSON.stringify(progress))}
   const savedProgress=loadProgress();
+  if(!localStorage.getItem(completionMigrationKey)){
+    whiteCloakKeys.forEach(key=>savedProgress[key]=true);
+    localStorage.setItem(progressKey,JSON.stringify(savedProgress));
+    localStorage.setItem(completionMigrationKey,"1");
+  }
   checkboxes.forEach(c=>{
     const key=c.dataset.requirement;
     c.checked=Object.prototype.hasOwnProperty.call(savedProgress,key)?savedProgress[key]===true:c.defaultChecked;
