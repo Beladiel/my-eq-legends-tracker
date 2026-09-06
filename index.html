@@ -30,6 +30,7 @@
     .quest-warning{margin:13px 0 0;padding:11px 12px;border-left:3px solid #d8b96e;border-radius:7px;background:rgba(216,185,110,.075);color:#d9d2bf;font:.82rem/1.48 ui-sans-serif,system-ui,sans-serif}.owned-note{border-left-color:#77a9ce;background:rgba(92,154,199,.08)}
     .focus-board{overflow:hidden}.focus-summary{padding:16px;border-bottom:1px solid var(--border-soft);color:var(--muted);font:.85rem/1.5 ui-sans-serif,system-ui,sans-serif}.focus-table-wrap{overflow-x:auto}.focus-table{width:100%;border-collapse:collapse;min-width:760px;font-family:ui-sans-serif,system-ui,sans-serif}.focus-table th,.focus-table td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.055);vertical-align:top;text-align:left;font-size:.8rem;line-height:1.4}.focus-table th{color:var(--gold);font-size:.69rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(7,12,19,.35);position:sticky;top:0}.focus-table td:first-child{font-weight:800;color:var(--parchment);white-space:nowrap}.focus-table tr:last-child td{border-bottom:0}.keep{color:#a9dcb3}.target{color:#f0d58c}.optional{color:#a8c9dd}.low{color:#89949a}.mini-pill{display:inline-block;margin-top:3px;padding:3px 7px;border-radius:999px;font-size:.65rem;font-weight:800}.mini-pill.keep{border-color:rgba(131,181,140,.3)}.mini-pill.target{border-color:rgba(216,185,110,.35)}
     .collection-card{padding:8px 16px}.collection-list{margin:0;padding:0;list-style:none}.collection-list li{position:relative;padding:12px 8px 12px 30px;border-bottom:1px solid rgba(255,255,255,.05);color:#aab2b4;font:.88rem/1.35 ui-sans-serif,system-ui,sans-serif}.collection-list li:last-child{border-bottom:0}.collection-list li::before{content:"✓";position:absolute;left:6px;top:11px;color:var(--success);font-weight:800}
+    .records-details{border:1px solid var(--border-soft);border-radius:var(--radius);background:linear-gradient(150deg,rgba(23,34,48,.96),rgba(15,23,34,.98));box-shadow:0 10px 26px rgba(0,0,0,.22);overflow:hidden}.records-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}.records-summary::-webkit-details-marker{display:none}.records-summary::after{content:"▾";flex:0 0 auto;color:var(--gold);font:800 1rem/1 ui-sans-serif,system-ui,sans-serif;transition:transform 180ms ease}.records-details[open] .records-summary::after{transform:rotate(180deg)}.records-summary-copy{min-width:0}.records-summary .section-kicker{margin-bottom:3px}.records-summary-title{display:block;color:var(--parchment);font-size:1.08rem;font-weight:700;line-height:1.25}.records-summary-meta{display:block;margin-top:4px;color:var(--muted);font:600 .74rem/1.3 ui-sans-serif,system-ui,sans-serif}.records-content{padding:0 14px 14px;border-top:1px solid rgba(255,255,255,.055)}.completed-quest-archive{margin:14px 0}.completed-quest-archive:empty{display:none}.records-content .quest-card{grid-column:1/-1}.records-content .collection-grid{margin-top:14px}
     .notes-card{padding:16px;background:rgba(16,24,35,.78)}.notes-card label{display:block;margin-bottom:8px;color:var(--muted);font:700 .75rem/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}textarea{display:block;width:100%;min-height:126px;resize:vertical;padding:13px;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(7,12,19,.7);color:var(--text);font:16px/1.5 ui-sans-serif,system-ui,sans-serif}.notes-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}.save-state{min-height:1.2em;margin:0;color:var(--success);font:.75rem/1.2 ui-sans-serif,system-ui,sans-serif}.clear-button{width:auto;min-height:42px;padding:8px 12px;border:1px solid var(--border-soft);border-radius:9px;background:transparent;color:var(--muted);font:700 .72rem/1 ui-sans-serif,system-ui,sans-serif;cursor:pointer}
     input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}.footer{margin:26px 0 4px;color:#69747c;font:.7rem/1.4 ui-sans-serif,system-ui,sans-serif;text-align:center}
     @media(min-width:720px){.shell{padding-top:34px}.hero{padding:32px}.quest-grid,.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quest-card{padding:20px 18px 16px}}
@@ -54,7 +55,7 @@
       <div><p class="section-kicker">The road ahead</p><h2 id="active-heading">Active Priorities</h2></div>
       <span class="section-count" id="overall-progress">0 complete</span>
     </div>
-    <div class="quest-grid">
+    <div class="quest-grid" id="active-quest-grid">
 
       <article class="quest-card quest-card--featured quest-card--dragon" data-quest="white-dragonscale-cloak">
         <div class="quest-topline"><div><h3 class="quest-title">White Dragonscale Cloak</h3><p class="quest-description">Completed. White Dragonscale Cloak acquired for Improved Damage III on the BACK slot.</p></div><span class="status-badge" aria-live="polite">Complete</span></div>
@@ -144,9 +145,9 @@
       </article>
 
       <article class="quest-card" data-quest="craftkeepers-faction">
-        <div class="quest-topline"><div><h3 class="quest-title">Craftkeepers Faction</h3><p class="quest-description">Current standing: Dubious</p></div><span class="status-badge" aria-live="polite">0 / 2</span></div>
-        <div class="progress-track" role="progressbar" aria-label="Craftkeepers Faction progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><div class="progress-fill"></div></div>
-        <ul class="requirements"><li class="requirement"><label><input type="checkbox" data-requirement="above-dubious"><span>Raise Craftkeepers above Dubious</span></label></li><li class="requirement"><label><input type="checkbox" data-requirement="faction-work"><span>Use appropriate faction quests or kills as needed</span></label></li></ul>
+        <div class="quest-topline"><div><h3 class="quest-title">Craftkeepers Faction</h3><p class="quest-description">Completed. Required Craftkeepers faction work finished.</p></div><span class="status-badge" aria-live="polite">Complete</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Craftkeepers Faction progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="2"><div class="progress-fill"></div></div>
+        <ul class="requirements"><li class="requirement"><label><input type="checkbox" data-requirement="above-dubious" checked><span>Raise Craftkeepers above Dubious</span></label></li><li class="requirement"><label><input type="checkbox" data-requirement="faction-work" checked><span>Use appropriate faction quests or kills as needed</span></label></li></ul>
       </article>
 
       <article class="quest-card" data-quest="baking">
@@ -189,11 +190,18 @@
   </section>
 
   <section aria-labelledby="records-heading">
-    <div class="section-heading"><div><p class="section-kicker">Hall of records</p><h2 id="records-heading">Owned &amp; Completed</h2></div></div>
-    <div class="collection-grid">
-      <article class="collection-card"><ul class="collection-list" aria-label="Owned gear and focus milestones"><li>White Dragonscale Cloak — Improved Damage III (quest complete)</li><li>Spell Haste II installed on finger from Djarn's Amethyst Ring</li><li>Engineer's Ring — Extended Range II</li><li>Bone-Clasped Girdle — Burning Affliction III</li><li>Lustrous Russet Boots — Enhancement Haste II</li><li>Bow of the Underfoot — Improved Healing III</li><li>Earthshaker equipped</li></ul></article>
-      <article class="collection-card"><ul class="collection-list" aria-label="Completed milestones"><li>Reached level 50</li><li>Completed Tashania quest</li><li>White Dragonscale Cloak quest completed</li><li>Djarn's Amethyst Ring obtained</li><li>Golden Efreeti Boots obtained</li><li>Idol of the Underking obtained</li><li>Moonstone Ring obtained</li></ul></article>
-    </div>
+    <details class="records-details">
+      <summary class="records-summary">
+        <span class="records-summary-copy"><span class="section-kicker">Hall of records</span><span class="records-summary-title" id="records-heading">Owned &amp; Completed</span><span class="records-summary-meta" id="records-summary-meta">Completed quests are stored here. Tap to view.</span></span>
+      </summary>
+      <div class="records-content">
+        <div class="quest-grid completed-quest-archive" id="completed-quest-archive" aria-label="Completed quests"></div>
+        <div class="collection-grid">
+          <article class="collection-card"><ul class="collection-list" aria-label="Owned gear and focus milestones"><li>White Dragonscale Cloak — Improved Damage III</li><li>Spell Haste II installed on finger from Djarn's Amethyst Ring</li><li>Engineer's Ring — Extended Range II</li><li>Bone-Clasped Girdle — Burning Affliction III</li><li>Lustrous Russet Boots — Enhancement Haste II</li><li>Bow of the Underfoot — Improved Healing III</li><li>Earthshaker equipped</li></ul></article>
+          <article class="collection-card"><ul class="collection-list" aria-label="Completed milestones"><li>Reached level 50</li><li>Completed Tashania quest</li><li>Djarn's Amethyst Ring obtained</li><li>Golden Efreeti Boots obtained</li><li>Idol of the Underking obtained</li><li>Moonstone Ring obtained</li></ul></article>
+        </div>
+      </div>
+    </details>
   </section>
 
   <section aria-labelledby="notes-heading">
@@ -204,15 +212,18 @@
       <div class="notes-footer"><p class="save-state" id="save-state" aria-live="polite">Saved on this device</p><button class="clear-button" id="clear-notes" type="button">Clear notes</button></div>
     </div>
   </section>
-  <p class="footer">Progress is stored locally on this device. Focus plan last reviewed Sep. 6, 2026.</p>
+  <p class="footer">Progress is stored locally on this device. Completed tasks automatically move to the Hall of Records. Updated Sep. 6, 2026.</p>
 </main>
 <script>
 (() => {
   const progressKey="eqQuestProgressV1";
   const notesKey="eqNotes";
-  const completionMigrationKey="eqWhiteCloakCompleteSep62026";
-  const whiteCloakKeys=["wdc-hide","wdc-ring","wdc-necklace","wdc-verify-jewelry","wdc-faction","wdc-travel","wdc-turnin","wdc-receive","wdc-verify-focus","focus-improved-damage-iii"];
+  const completionMigrationKey="eqCompletedTaskMigrationSep62026";
+  const completedTaskKeys=["wdc-hide","wdc-ring","wdc-necklace","wdc-verify-jewelry","wdc-faction","wdc-travel","wdc-turnin","wdc-receive","wdc-verify-focus","focus-improved-damage-iii","above-dubious","faction-work"];
   const checkboxes=[...document.querySelectorAll("[data-requirement]")];
+  const activeGrid=document.getElementById("active-quest-grid");
+  const completedArchive=document.getElementById("completed-quest-archive");
+  const recordsSummaryMeta=document.getElementById("records-summary-meta");
   const notes=document.getElementById("notes");
   const saveState=document.getElementById("save-state");
   let saveTimer;
@@ -227,15 +238,27 @@
     card.classList.toggle("is-complete",total>0&&complete===total);
     if(progress){progress.setAttribute("aria-valuenow",complete);progress.setAttribute("aria-valuemax",total);progress.setAttribute("aria-valuetext",`${complete} of ${total} complete`)}
   }
+  function organizeQuestCards(){
+    const cards=[...document.querySelectorAll(".quest-card[data-quest]")];
+    cards.forEach(card=>{
+      const questChecks=[...card.querySelectorAll("[data-requirement]")];
+      const done=questChecks.length>0&&questChecks.every(c=>c.checked);
+      if(done&&card.parentElement!==completedArchive) completedArchive.appendChild(card);
+      if(!done&&card.parentElement!==activeGrid) activeGrid.appendChild(card);
+    });
+    const completedCount=completedArchive.querySelectorAll(".quest-card[data-quest]").length;
+    const activeCount=activeGrid.querySelectorAll(".quest-card[data-quest]").length;
+    document.getElementById("overall-progress").textContent=`${activeCount} active · ${completedCount} completed`;
+    recordsSummaryMeta.textContent=completedCount===1?"1 completed quest archived. Tap to view.":`${completedCount} completed quests archived. Tap to view.`;
+  }
   function updateAllProgress(){
     document.querySelectorAll(".quest-card").forEach(updateQuestCard);
-    const complete=checkboxes.filter(c=>c.checked).length;
-    document.getElementById("overall-progress").textContent=`${complete} / ${checkboxes.length} complete`;
+    organizeQuestCards();
   }
   function saveProgress(){const progress={};checkboxes.forEach(c=>progress[c.dataset.requirement]=c.checked);localStorage.setItem(progressKey,JSON.stringify(progress))}
   const savedProgress=loadProgress();
   if(!localStorage.getItem(completionMigrationKey)){
-    whiteCloakKeys.forEach(key=>savedProgress[key]=true);
+    completedTaskKeys.forEach(key=>savedProgress[key]=true);
     localStorage.setItem(progressKey,JSON.stringify(savedProgress));
     localStorage.setItem(completionMigrationKey,"1");
   }
